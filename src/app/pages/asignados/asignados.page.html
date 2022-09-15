@@ -1,0 +1,64 @@
+<app-header></app-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="reloader($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="container">
+    <ion-header>
+      <ion-toolbar>
+        <ion-label color="dark" style="text-align: center;">
+          <h2>{{ 'ASIGNADOS-COMPONENT.TITULO' | translate }}</h2>
+        </ion-label>
+      </ion-toolbar>
+    </ion-header>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text class="ion-text-left">
+          <h5>{{ 'ASIGNADOS-COMPONENT.DESCRIPCION' | translate }}</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-list *ngFor="let c of casos" lines="none">
+      <ion-row>
+        <ion-col size="3">
+          <ion-item>
+            <ion-label>
+              <strong>{{ 'ASIGNADOS-COMPONENT.ID-CASO' | translate }}:</strong>
+              {{c.cod_caso}}
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9">
+          <ion-item>
+            <ion-label>
+              <strong>{{ 'ASIGNADOS-COMPONENT.HOSPITAL-DESTINO' | translate }}:</strong>
+              {{c.nombre_hospital}}
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4.5">
+          <ion-item>
+            <ion-label>
+              <strong>{{ 'ASIGNADOS-COMPONENT.HORA-ASIGNACION' | translate }}:</strong> 
+              <span style="float:right;">{{getFechaOr(c.hora_asigna)}}</span>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5">
+          <ion-item>
+            <ion-label><strong>{{ 'ASIGNADOS-COMPONENT.FECHA-INCIDENTE' | translate }}:</strong> <span
+                style="float:right;">{{getFechaOr(c.fecha_incidente)}}</span></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="1">
+          <ion-button (click)="cargarCaso(c.cod_caso,c.id_hospital,c.nombre_hospital)">
+            <ion-icon slot="start" name="medkit"></ion-icon>
+            {{ 'ASIGNADOS-COMPONENT.TOMAR-CASO' | translate }}
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,88 @@
+<app-header></app-header>
+<ion-content>
+  <div class="container">
+    <ion-row>
+      <ion-col size="3.5"></ion-col>
+      <ion-col size="5">
+        <ion-card style="border-radius: 15px;">
+          <ion-card-header style="margin-top:5%; margin-bottom:2%;text-align: center;">
+            <ion-card-subtitle> {{ 'LOGIN-COMPONENT.TITULO' | translate}} </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- <ion-select style="margin-left: 13%; width:70%; color: black"
+              cancelText="{{ 'LOGIN-COMPONENT.CANCELAR' | translate}}" (ionChange)="setLang($event)" required="true"
+              [interfaceOptions]="customActionSheetOptions" interface="action-sheet"
+              placeholder="{{ 'LOGIN-COMPONENT.LANGUAGE' | translate}}">
+              <ion-select-option *ngFor="let l of languages" value="{{l.code}}">{{l.label}}
+              </ion-select-option>              
+            </ion-select>             -->                        
+            <ion-input style="margin-left: 15%; width:70%; color: black" required="true"
+              placeholder="{{ 'LOGIN-COMPONENT.USUARIO' | translate}} :" [(ngModel)]="Usuario" type="username">
+            </ion-input>
+            <ion-input style="margin-left: 15%; width:70%; color: black" required="true"
+              placeholder="{{ 'LOGIN-COMPONENT.CONTRASENA' | translate}} :" [(ngModel)]="Password" type="password">
+            </ion-input>
+            <ionic-selectable #selectDiag (onChange)="setAmbu()" [(ngModel)]="ambul"
+              style="margin-left: 15%; width:70%; color: black" [items]="Ambulancias" itemValueField="id_ambulancias"
+              searchPlaceholder="{{ 'LOGIN-COMPONENT.SEARCH-PLACEHOLDER' | translate}}" [canSearch]="true"
+              placeholder="{{ 'LOGIN-COMPONENT.PLACEHOLDER' | translate}}"
+              searchFailText="{{ 'LOGIN-COMPONENT.SEARCH-FAIL' | translate}}" itemTextField="cod_ambulancias"
+              closeButtonText="">
+              <ng-template ionicSelectableTitleTemplate>
+                <span style="color: white;">{{ 'LOGIN-COMPONENT.TITULO-VENTANA' | translate}}</span>
+              </ng-template>
+              <ng-template ionicSelectableFooterTemplate>
+                <ion-footer>
+                  <ion-toolbar>
+                    <ion-row>
+                      <ion-col size="4">
+                        <ion-button color="dark" (click)="diagCancel()" expand="block" fill="clear" shape="round">
+                          {{ 'LOGIN-COMPONENT.CANCELAR' | translate}}
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4">
+                        <ion-button color="dark" (click)="diagClear()" expand="block" fill="clear" shape="round">
+                          {{ 'LOGIN-COMPONENT.LIMPIAR' | translate}}
+                        </ion-button>
+                      </ion-col>
+                      <ion-col size="4">
+                        <ion-button color="dark" (click)="diagConf()" expand="block" fill="clear" shape="round">
+                          {{ 'LOGIN-COMPONENT.GUARDAR' | translate}}
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </ion-toolbar>
+                </ion-footer>
+              </ng-template>
+            </ionic-selectable>
+          </ion-card-content>
+          <div style="text-align:center; margin-top:5%; margin-bottom:5%">
+            <ion-button (click)="login()" style="border-radius: 18px;">{{ 'LOGIN-COMPONENT.INGRESAR' | translate}}
+            </ion-button>
+          </div>
+        </ion-card>
+      </ion-col>
+      <ion-col size="3.5">
+        <ion-fab vertical="top" horizontal="start">
+          <ion-fab-button>
+            <ion-icon name="earth"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-list side="bottom">
+            <ion-fab-button  (click)="setLang('02')" color="primary">
+              <ion-icon src="assets/icon/flags/united-states.svg"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button  (click)="setLang('01')" color="primary">
+              <ion-icon src="assets/icon/flags/spain.svg"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button  (click)="setLang('04')" color="primary">
+              <ion-icon src="assets/icon/flags/france.svg"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button  (click)="setLang('03')" color="primary">
+              <ion-icon src="assets/icon/flags/brazil.svg"></ion-icon>
+            </ion-fab-button>
+          </ion-fab-list>              
+        </ion-fab>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

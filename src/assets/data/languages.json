@@ -1,0 +1,22 @@
+[
+    {
+        "label": "Español",
+        "shortName": "Es",
+        "code" :"01"
+    },
+    {
+        "label": "English",
+        "shortName": "En",
+        "code" :"02"
+    },
+    {
+        "label": "Português",
+        "shortName": "Po",
+        "code" :"03"
+    },
+    {
+        "label": "Français",
+        "shortName": "Fr",
+        "code" :"04"
+    }
+]

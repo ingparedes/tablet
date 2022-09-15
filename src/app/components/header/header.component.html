@@ -1,0 +1,28 @@
+<ion-header color="dark">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="sismenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="dark">
+      <ion-img style="height: 49.2px;" src="../../../assets/icon/login.png"></ion-img>
+    </ion-title>
+    <ion-buttons [class.hide]="!showH" slot="end">      
+      <ion-button [class.hide]="!showHI" (click)="ghStart()" color="dark">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        {{ 'HEADER-COMPONENT.HORA-INICIO' | translate}}
+      </ion-button>
+      <ion-button [class.hide]="!showHE" (click)="ghEvent()" color="dark">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        {{ 'HEADER-COMPONENT.HORA-EVENTO' | translate}}
+      </ion-button>
+      <ion-button [class.hide]="!showHH" (click)="ghHosp()" color="dark">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        {{ 'HEADER-COMPONENT.HORA-HOSPITAL' | translate}}
+      </ion-button>
+      <ion-button [class.hide]="!showHB"(click)="ghBase()" color="dark">
+        <ion-icon slot="start" name="time-outline"></ion-icon>
+        {{ 'HEADER-COMPONENT.HORA-BASE' | translate}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>

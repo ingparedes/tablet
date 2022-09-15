@@ -1,0 +1,182 @@
+<ion-content color="dark">    
+    <ion-row>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.TRIAGE' | translate}}</ion-label>
+                <ion-select cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.TRIAGE-CANCELAR' | translate}}" required="true" [(ngModel)]="triage"
+                    [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.TRIAGE-PLACEHOLDER' | translate}}">
+                    <ion-select-option *ngFor="let t of triages" value="{{t.id}}">{{t.nombre}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <!-- TITULO -->
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.SIGNOS-VITALES' | translate}}</h5>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+    <!-- TITULO -->
+    <!-- FORMULARIO -->
+    <ion-row>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.TENSION-ARTERIAL' | translate}}</ion-label>
+                <ion-input [(ngModel)]="sv_tx" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.FRECUENCIA-CARDIACA' | translate}}</ion-label>
+                <ion-input [(ngModel)]="sv_fc" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.FRECUENCIA-RESPIRATORIA' | translate}}</ion-label>
+                <ion-input [(ngModel)]="sv_fr" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.TEMPERATURA' | translate}}</ion-label>
+                <ion-input [(ngModel)]="sv_temp" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.SATURACION' | translate}}</ion-label>
+                <ion-input [(ngModel)]="sv_satO2" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.GLASGOW' | translate}}</ion-label>
+                <ion-input [(ngModel)]="sv_gl" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <!-- TITULO -->
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.DIAGNOSTICO-PRESUNTIVO' | translate}}</h5>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+    <!-- TITULO -->
+    <ion-row>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.DIAGNOSTICO' | translate}}</ion-label>
+                <ionic-selectable #selectDiag [(ngModel)]="diags" [items]="diagnosticos" itemValueField="id"
+                    itemTextField="nombre"
+                    [isConfirmButtonEnabled]="selectDiag.itemsToConfirm.length >= 1 && selectDiag.itemsToConfirm.length <= 3"
+                    [isMultiple]="true" searchFailText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.DIAGNOSTICO-NO-ENCONTRADO' | translate}}"
+                    searchPlaceholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.DIAGNOSTICO-PLACEHOLDER' | translate}}" [canSearch]="true" (onSearch)="searchDiag($event)"
+                    closeButtonText="">
+                    <ng-template ionicSelectableTitleTemplate>
+                        <span style="color: white;">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.ELEGIR-DIAGNOSTICO' | translate}}</span>
+                    </ng-template>
+                    <ng-template ionicSelectableMessageTemplate>
+                        <span style="color: white;">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.SELECCIONAR-X-DIAGNOSTICOS' | translate}}</span>
+                    </ng-template>
+                    <ng-template ionicSelectableFooterTemplate>
+                        <ion-footer>
+                            <ion-toolbar>
+                                <ion-row>
+                                    <ion-col size="4">
+                                        <ion-button color="dark" (click)="diagCancel()" expand="block" fill="clear"
+                                            shape="round">
+                                            {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.CANCELAR' | translate}}
+                                        </ion-button>
+                                    </ion-col>
+                                    <ion-col size="4">
+                                        <ion-button color="dark" (click)="diagClear()" expand="block" fill="clear"
+                                            shape="round">
+                                            {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.LIMPIAR' | translate}}
+                                        </ion-button>
+                                    </ion-col>
+                                    <ion-col size="4">
+                                        <ion-button color="dark" (click)="diagConf()" expand="block" fill="clear"
+                                            shape="round">
+                                            {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.GUARDAR' | translate}}
+                                        </ion-button>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-toolbar>
+                        </ion-footer>
+                    </ng-template>
+                </ionic-selectable>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <!-- TITULO -->
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.ANTECEDENTES-PACIENTE' | translate}}</h5>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+    <!-- TITULO -->
+    <ion-row>
+        <ion-col size="4">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.DIABETES' | translate}}</ion-label>
+                <ion-checkbox value="1" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.CARDIOPATIA' | translate}}</ion-label>
+                <ion-checkbox value="2" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.CONVULSIONES' | translate}}</ion-label>
+                <ion-checkbox value="3" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.ASMA-BRONQUITIS' | translate}}</ion-label>
+                <ion-checkbox value="4" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="2">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.ACV' | translate}}</ion-label>
+                <ion-checkbox value="5" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="2">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.HAS' | translate}}</ion-label>
+                <ion-checkbox value="6" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="4">
+            <ion-item lines="none">
+                <ion-label>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.ALERGIA' | translate}}</ion-label>
+                <ion-checkbox value="7" (ionChange)="SetCheck($event)" slot="start"></ion-checkbox>
+            </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.MEDICAMENTOS' | translate}}</ion-label>
+                <ion-input [(ngModel)]="ap_med_paciente" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-DIAGNOSTICO.OTROS' | translate}}</ion-label>
+                <ion-input [(ngModel)]="ap_otros" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-content>

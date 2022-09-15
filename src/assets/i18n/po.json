@@ -1,0 +1,452 @@
+{
+  "HEADER-COMPONENT": {
+    "HORA-INICIO": "H. início",
+    "HORA-INICIO-LONG": "Hora de início",
+    "HORA-EVENTO": "H. evento",
+    "HORA-EVENTO-LONG": "Hora do evento",
+    "HORA-HOSPITAL": "H. Horário",
+    "HORA-HOSPITAL-LONG": "Hospital Horário",
+    "HORA-BASE": "H. base",
+    "HORA-BASE-LONG": "Horário base"
+  },
+  "SISMENU-COMPONENT": {
+    "MENU": {
+      "INICIO": "Início",
+      "ABRIR-TURNO": "Turno aberto",
+      "CASOS-ASIGNADOS": "Casos atribuídos",
+      "CREAR-CASOS": "Criar casos",
+      "SINCRONIZAR-CASOS": "Sincronizar casos",
+      "CERRAR-SESION": "Fechar sessão"
+    }
+  },
+  "ASIGNADOS-COMPONENT" : {
+    "TITULO": "CASOS ATRIBUÍDOS",
+    "DESCRIPCION": "Os casos exibidos nesta tela são atribuídos à ambulância.",
+    "ID-CASO": "Id do caso",
+    "HOSPITAL-DESTINO": "Hospital de destino",
+    "HORA-ASIGNACION-LONG": "Hora da atribuição",
+    "HORA-ASIGNACION": "H. atribuição",
+    "FECHA-INCIDENTE-LONG": "Data do incidente",
+    "FECHA-INCIDENTE": "D. do incidente",
+    "TOMAR-CASO": "Take case",
+    "SYNC-CASOS": "Sincronizando casos atribuídos, aguarde ...",
+    "FOLDER-CARGAR":{
+      "INFO-BASICA-LONG": "INFORMAÇÕES BÁSICAS",
+      "INFO-BASICA": "INFO. BÁSICAS",
+      "CAUSA": "CAUSA",
+      "EXPLORACION-GENERAL": "EXPLORAÇÃO GERAL",
+      "EXPLORACION-FISICA": "EXPLORAÇÃO FÍSICA",
+      "DIAGNOSTICO": "DIAGNÓSTICO",
+      "PROCEDIMIENTO": "PROCEDIMENTO",
+      "COMPLEMENTO": "COMPLEMENTO",
+      "OTROS": "OUTROS",
+      "ALERT": {
+        "HEADER": "Abrir caso",
+        "MENSAJE": "Deseja abrir o caso nº",
+        "CANCELAR": "Cancelar",
+        "SI": "Sim"
+      },
+      "FOLDER-LOAD-CAUSA": {
+        "CAUSAS": "Causas",
+        "FOLDER-LOAD-OBSTETRICO": {
+          "TRABAJO-PARTO": "Trabalho de parto",
+          "SANGRADO-VAGINAL": "Sangramento vaginal",
+          "FUENTE-ROTA": "Fonte quebrada",
+          "TIEMPO-GESTACION": "T. gestação",
+          "TIEMPO-GESTACION-LONG": "Tempo de gestação"
+        },
+        "FOLDER-LOAD-TRAUMA": {
+          "AGRESION-FISICA": "Agressão física",
+          "CAIDA": "Queda",
+          "QUEMADURA": "Queimadura",
+          "OTROS": "Outros",
+          "AUTOMOVILISTICA": "Acidente de automóvel"
+        }
+      },
+      "FOLDER-LOAD-COMPLEMENTOS": {
+        "LISTA-MEDICAMENTOS": "Lista de medicamentos",
+        "LISTA-INSUMOS": "Lista de suprimentos",
+        "MEDICAMENTOS-SELECCIONADOS": "Medicamentos selecionados",
+        "MEDICAMENTO": "Medicamentos",
+        "INSUMOS-SELECCIONADOS": "Suprimentos selecionados",
+        "INSUMO": "Suprimentos",
+        "CANTIDAD": "Qtd",
+        "ALERT-INSUMO": {
+          "HEADER": "Adicionar suprimentos",
+          "CANTIDAD": "Quantidade",
+          "CANCELAR": "Cancelar",
+          "ADD": "Adicionar"
+        },
+        "ALERT-MEDICAMENTO": {
+          "HEADER": "Adicionar medicamentos",
+          "CANTIDAD": "Quantidade",
+          "CANCELAR": "Cancelar",
+          "ADD": "Adicionar"
+        }
+      },
+      "FOLDER-LOAD-DIAGNOSTICO": {
+        "TRIAGE": "Triagem",
+        "TRIAGE-CANCELAR": "Cancelar",
+        "TRIAGE-PLACEHOLDER": "Triagem",
+        "SIGNOS-VITALES": "Sinais vitais",
+        "TENSION-ARTERIAL": "Pressão arterial (NN / NN)",
+        "FRECUENCIA-CARDIACA": "Frequência cardíaca",
+        "FRECUENCIA-RESPIRATORIA": "Frequência respiratória",
+        "TEMPERATURA": "Temperatura",
+        "SATURACION": "Saturação de O2",
+        "GLASGOW":"Glasgow",
+        "DIAGNOSTICO-PRESUNTIVO": "Diagnóstico presuntivo (CIE-10)",
+        "DIAGNOSTICO": "Diagnóstico",
+        "DIAGNOSTICO-NO-ENCONTRADO": "Nenhum diagnóstico encontrado.",
+        "DIAGNOSTICO-PLACEHOLDER": "Insira o diagnóstico",
+        "ELEGIR-DIAGNOSTICO": "Escolha o diagnóstico",
+        "SELECCIONAR-X-DIAGNOSTICOS": "Selecione no máximo 3 diagnósticos.",
+        "CANCELAR": "Cancelar",
+        "LIMPIAR": "Limpar",
+        "GUARDAR": "Salvar",
+        "ANTECEDENTES-PACIENTE": "Histórico do paciente",
+        "DIABETES": "Diabetes",
+        "CARDIOPATIA": "Doença cardíaca",
+        "CONVULSIONES": "Convulsões",
+        "ASMA-BRONQUITIS": "Asma / bronquite",
+        "ACV": "AVC",
+        "HAS": "HSA",
+        "ALERGIA": "Alergia",
+        "MEDICAMENTOS": "Medicamentos",
+        "OTROS": "Outros",
+        "DIAGNOSTICOS": "Diagnósticos",
+        "MENSAJE": "Você deve escolher no máximo 3 diagnósticos, recomece.",
+        "ENTENDIDO": "Entendido"
+      },
+      "FOLDER-LOAD-EXPLORACION-FISICA": {
+        "SUBTITULO": "Exp. Físico",
+        "SUBTITULO-LONG": "Exploração Físico",
+        "TRAUMAS": "Traumas",
+        "TRAUMAS-ASOCIADOS": "Traumas Associados",
+        "LIMPIAR": "Eliminar Traumas",
+        "ALERT": {
+          "ERROR": "Erro",
+          "MENSAJE": "Você deve escolher um Trauma antes de desenhar!",
+          "LISTO": "Concluído"
+        }
+      },
+      "FOLDER-LOAD-EXPLORACION-GENERAL": {
+        "SUBTITULO": "Exp. Geral",
+        "SUBTITULO-LONG": "Exploração Geral",
+        "PIEL": "Pele",
+        "CABEZA": "Cabeça",
+        "COLUMNA": "Coluna",
+        "PELVIS": "Pelve",
+        "TORAX": "Tórax",
+        "CARA": "Face",
+        "ABDOMEN": "Abdômen",
+        "CUELLO": "Pescoço",
+        "MIEMBROS": "Membros"
+      },
+      "FOLDER-LOAD-BASICA": {
+        "SUBTITULO-LONG": "Informações do paciente",
+        "SUBTITULO": "Info. do paciente",
+        "DNI": "DNI",
+        "TIPO-DNI": "Tipo de DNI",
+        "TIPO-DNI-CANCELAR": "Cancelar",
+        "TIPO-DNI-PLACEHOLDER": "Tipo de DNI",
+        "NOMBRES": "Nomes",
+        "APELLIDOS": "Sobrenome",
+        "GENERO": "Sexo",
+        "GENERO-CANCELAR": "Cancelar",
+        "GENERO-PLACEHOLDER": "Sexo",
+        "FECHA-NACIMIENTO-LONG": "Data de nascimento",
+        "FECHA-NACIMIENTO": "D. de nascimento",
+        "FECHA-NACIMIENTO-CANCELAR": "Cancelar",
+        "FECHA-NACIMIENTO-MESES":"Jan,Fev,Mar,Abr,May,Jun,Jul,Ago,Set,Out,Nov,Dez",
+        "EDAD": "Idade",
+        "CELULAR": "Telefone celular",
+        "TELEFONO": "Telefone",
+        "ASEGURADORA": "Seguradora",
+        "ASEGURADORA-NO-ENCUENTRA": "Nenhuma seguradora encontrada.",
+        "ASEGURADORA-BUSCAR": "Pesquisar seguradora",
+        "ASEGURADORA-ELEGIR": "Escolher seguradora",
+        "CANCELAR": "Cancelar",
+        "LIMPIAR": "Limpar",
+        "GUARDAR": "Salvar",
+        "DIRECCION": "Endereço",
+        "DEPARTAMENTO": "Departamento",
+        "DEPARTAMENTO-CANCELAR": "Cancelar",
+        "DEPARTAMENTO-PLACEHOLDER": "Departamento",
+        "PROVINCIA": "Província",
+        "PROVINCIA-CANCELAR": "Cancelar",
+        "PROVINCIA-PLACEHOLDER": "Província",
+        "DISTRITO": "Distrito",
+        "DISTRITO-CANCELAR": "Cancelar",
+        "DISTRITO-PLACEHOLDER": "Distrito",
+        "INFO-CASO-LONG": "Informações do caso",
+        "INFO-CASO": "Info. do caso",
+        "NUMERO-CASO": "Número do caso",
+        "KM-INICIAL": "Quilômetro inicial",
+        "MES-SINGULAR": "Mês",
+        "MES-PLURAL": "Meses",
+        "DIA-SINGULAR": "Dia",
+        "DIA-PLURAL": "Dias",
+        "ANHO-SINGULAR": "Ano",
+        "ANHO-PLURAL": "Anos",
+        "ERROR": "Erro"
+      },
+      "FOLDER-LOAD-OTROS": {
+        "SUBTITULO": "Pertences do paciente e quilômetro final da ambulância",
+        "DESCRIPCION": "Descrição",
+        "RECIBE": "Quem recebe",
+        "TELEFONO": "Telefone",
+        "KM-FINAL": "Quilômetro final",
+        "HOSPITAL": "Hospital",
+        "HOSPITAL-RECIBE": "Hospital que recebe o paciente",
+        "HOSPITALES-VACIO": "Nenhum hospital encontrado.",
+        "BUSCAR-HOSPITAL": "Pesquisar Hospital ...",
+        "ELEGIR-HOSPITAL": "Escolha Hospital ",
+        "CANCELAR": "Cancelar",
+        "LIMPIAR": "Limpar",
+        "GUARDAR": "Salvar",
+        "MEDICO": "Médico que recebe o paciente",
+        "OBSERVACIONES": "Observações do caso",
+        "FIRMA-MEDICO-RECIBE": "Assinatura do médico que recebe o paciente no hospital",
+        "FIRMA-MEDICO": "Assinatura do Médico",
+        "CERRAR-CASO": "Fechar caso",
+        "CERRAR-CASO-LABEL": "Fechar Caso",
+        "CANCELAR-TEXT": "Cancelar",
+        "CERRAR-CASO-PLACEHOLDER": "Fechar Caso",
+        "ALERT-CERRAR-CASO": {
+          "CONFIRMACION": "Deseja encerrar o caso?",
+          "HEADER": "Confirmação",
+          "NO": "Não",
+          "SI": "Sim"
+        }
+      },
+      "FOLDER-LOAD-PROCEDIMIENTOS": {
+        "PROCEDIMIENTOS": "Procedimentos"
+      }
+    }
+  },
+  "CREARCASOS-COMPONENT" : {
+    "ALERT-CASO-MANUAL": {
+      "HEADER": "Manual do caso",
+      "CODIGO-CASO": "Código do caso",
+      "CANCELAR": "Cancelar",
+      "INICIAR-CASO": "Iniciar caso"
+    },
+    "ALERT-CONFIRMAR": {
+      "HEADER": "Criar caso",
+      "MENSAJE": "Deseja criar um novo caso?",
+      "CANCELAR": "Cancelar",
+      "SI": "Sim"
+    },
+    "INFO-BASICA-LONG": "INFORMAÇÕES BÁSICAS",
+    "INFO-BASICA": "INFO. BÁSICAS",
+    "CAUSA": "CAUSA",
+    "EXPLORACION-GENERAL": "EXPLORAÇÃO GERAL",
+    "EXPLORACION-FISICA": "EXPLORAÇÃO FÍSICA",
+    "DIAGNOSTICO": "DIAGNÓSTICO",
+    "PROCEDIMIENTO": "PROCEDIMENTO",
+    "COMPLEMENTO": "COMPLEMENTO",
+    "OTROS": "OUTROS" 
+  },
+  "EXPORTARCASOS-COMPONENT" : {
+    "TITULO": "CASOS DE EXPORTAÇÃO",
+    "DESCRIPCION": "Casos que são exibidos nesta tela estão pendentes para serem sincronizados, você pode escolher um por um ou sincronizar todos eles."
+  },
+  "INICIO-COMPONENT" : {
+    "TITULO": "CONSULTE OS CASOS",
+    "SUBTITULO": "Os casos exibidos nesta tela já estão encerrados. Você só poderá visualizar os PDFs gerados a partir do caso.",
+    "ID-CASO": "Id do caso",
+    "PACIENTE": "Paciente",
+    "HORA-ASIGNACION": "H. atribuição",
+    "HORA-ASIGNACION-LONG": "Hora da atribuição",
+    "HORA-INICIO": "H. início",
+    "HORA-INICIO-LONG": "Hora de início",
+    "HORA-EVENTO": "H. evento",
+    "HORA-EVENTO-LONG": "Hora do evento",
+    "HORA-HOSPITAL": "H. hospital",
+    "HORA-HOSPITAL-LONG": "Hora do hospital",
+    "SUBMIT": "Ver relatório",
+    "SYNC-CASOS-CERRADOS": "Sincronizando casos fechados, aguarde ...",
+    "DESCARGANDO-CASO": "Baixando caso N °",
+    "INFORME-CASO": "RELATO DE CASO N °",
+    "CASO-N":"Caso N° ",
+    "PROCEDIMIENTOS": "Procedimentos",
+    "CANTIDAD": "QUANTIDADE",
+    "SI": "SIM",
+    "NO": "NÃO",
+    "TABLA-1": {
+      "FECHA": "Data",
+      "HORA": "Hora",
+      "AMBULANCIA": "Ambulância",
+      "KM-INICIAL": "Km inicial",
+      "KM-FINAL": "Km final"
+    },
+    "TABLA-2": {
+      "PACIENTE": "Nome do paciente",
+      "GENERO": "Sexo",
+      "EDAD": "Idade"
+    },
+    "TABLA-3": {
+      "CAUSA": "Causa da emergência"
+    },
+    "TABLA-4": {},
+    "TABLA-5": {
+      "TIEMPO-GESTACION-LONG": "Hora da gestação",
+      "TIEMPO-GESTACION": "H. gestação",
+      "FUENTE": "Fonte",
+      "SANGRADO": "Sangramento vaginal",
+      "TRABAJO-PARTO": "Trabalho de parto"
+    },
+    "TABLA-6": {},
+    "TABLA-7": {
+      "INFO-TIEMPOS-LONG": "Hora de início",
+      "INFO-TIEMPOS": "H. início"
+    },
+    "TABLA-8": {
+      "HORA-INICIO": "H. início do deslocamento",
+      "HORA-INICIO-LONG": "Horário de início do deslocamento",
+      "HORA-LUGAR": "H. chegada no local",
+      "HORA-LUGAR-LONG": "Horário de chegada no local",
+      "HORA-HOSPITAL": "H. chegada ao hospital",
+      "HORA-HOSPITAL-LONG": "Horário de chegada ao hospital"
+    },
+    "TABLA-9": {
+      "EXPLORACION-GENERAL-LONG": "Exploração geral",
+      "EXPLORACION-GENERAL": "Exp. geral"
+    },
+    "TABLA-10": {
+      "CATEGORIA": "Categoria",
+      "NOMBRE": "Nome"
+    },
+    "TABLA-11": {},
+    "TABLA-12": {
+      "EXPLORACION-LONG": "Exploração físico",
+      "EXPLORACION": "Exp. físico"
+    },
+    "TABLA-13": {
+      "POSICION": "Posição",
+      "TRAUMA": "Trauma"
+    },
+    "TABLA-14": {
+      "PUNTO": "Ponto "
+    },
+    "TABLA-15": {
+      "SIGNOS": "Sinais vitais"
+    },
+    "TABLA-16": {
+      "HORA": "Tempo",
+      "FR": "FR",
+      "TA": "TA",
+      "FC": "HR",
+      "SA02": "SaO2",
+      "TEMP": "Temp",
+      "GLASGOW": "Glasgow"
+    },
+    "TABLA-17": {
+      "ANTECEDENTES": "Fundo"
+    },
+    "TABLA-18": {
+      "DIABETES": "Diabetes",
+      "CARDIOPATIA": "Doença cardíaca",
+      "CONVULSIONES": "Convulsões",
+      "ASMA": "Asma / bronquite",
+      "ACV": "AVC"
+    },
+    "TABLA-19": {
+      "HAS": "HSA",
+      "ALERGIA": "Alergia",
+      "OTROS": "Outros",
+      "MEDICAMENTOS": "Medicamentos"
+    },
+    "TABLA-20": {
+      "DIAGNOSTICOS": "Diagnóstico"
+    },
+    "TABLA-21": {
+      "CODIGO-CIE10": "Código Cie10",
+      "DIAGNOSTICO": "Diagnóstico"
+    },
+    "TABLA-22": {},
+    "TABLA-23": {
+      "COMPLEMENTOS": "Complementos"
+    },
+    "TABLA-24": {
+      "MEDICAMENTOS": "Medicamentos",
+      "INSUMOS": "Suprimentos"
+    },
+    "TABLA-25": {
+      "OTROS": "Outros"
+    },
+    "TABLA-26": {
+      "TRIAGE": "Triagem",
+      "OBSERVACIONES": "Observações"
+    },
+    "TABLA-27": {
+      "PERTENENCIAS": "Pertences"
+    },
+    "TABLA-28": {
+      "DESCRIPCION": "Descrição",
+      "NOMBRE": "Nome que recebe"
+    },
+    "TABLA-29": {
+      "OPCION-CIERRE": "Opção de Encerramento de Caso"
+    },
+    "TABLA-30": {
+      "DESTINO": "Destino"
+    },
+    "TABLA-31": {
+      "HOSPITAL": "Hospital",
+      "MEDICO": "Médico"
+    },
+    "TABLA-32": {
+      "FIRMA": "Assinatura do Médico"
+    }
+  },
+  "LOGIN-COMPONENT" : {
+    "LANGUAGE":"Língua",
+    "TITULO": "BEM-VINDO AO SISTEMA DE INFORMAÇÃO DE EMERGÊNCIAS MÉDICAS",
+    "USUARIO": "Usuário",
+    "CONTRASENA": "Senha",
+    "SEARCH-PLACEHOLDER": "Ambulância",
+    "PLACEHOLDER": "Selecionar ambulância",
+    "SEARCH-FAIL": "Nenhuma ambulância encontrada.",
+    "TITULO-VENTANA": "Selecionar ambulância",
+    "CANCELAR": "Cancelar",
+    "LIMPIAR": "Limpar",
+    "GUARDAR": "Salvar",
+    "INGRESAR": "ENTER",
+    "CONFIRM-EXIT": {
+      "HEADER": "Sair",
+      "MESSAGE": "Deseja sair do aplicativo?",
+      "CANCELAR-LABEL": "Cancelar",
+      "SI-LABEL": "Sim"
+    },
+    "REGISTROS-LOCALES": "Não há registros locais, deseja sincronizar?",
+    "CONFIRM-VERIFY": {
+      "USUARIO-INCORRECTO": "Digite um usuário válido",
+      "USUARIO-INEXISTENTE": "O usuário inserido não existe ",
+      "CONTRASENA-VACIA": "Você deve inserir uma senha",
+      "AMBULANCIA-VACIA": "Você deve escolher uma ambulância para continuar",
+      "CONTRASENA-INCORRECTA": "A senha digitada não está correta"
+    },
+    "REINICIANDO": "Reiniciando...",
+    "CANCELAR-LABEL-2": "Cancelar",
+    "SI-LABEL-2": "Sim",
+    "OK-LABEL": "Ok"
+  },
+  "TURNO-COMPONENT" : {
+    "TITULO": "ABRIR TURNO",
+    "INFORMACION": "Informação de turno",
+    "CODIGO-AMBULANCIA": "Código da ambulância",
+    "KILOMETRAJE": "Quilometragem atual",
+    "COMBUSTIBLE": "Combustível atual",
+    "VALES": "Número de vouchers",
+    "OBSERVACIONES": "Observações",
+    "ABRIR-TURNO-BUTTON": "Abrir turno",
+    "CONFIRM-ABRIR-TURNO": {
+      "HEADER": "Abrir turno",
+      "MESSAGE": "Deseja abrir turno?",
+      "CANCELAR-LABEL": "Cancelar",
+      "SI-LABEL": "Sim"
+    }
+  }
+}

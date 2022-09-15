@@ -1,0 +1,135 @@
+<ion-content color="dark">
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5> {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.SUBTITULO' | translate}} </h5>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="4">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.DESCRIPCION' | translate}}</ion-label>
+                <ion-input [(ngModel)]="desc" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="3">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.RECIBE' | translate}}</ion-label>
+                <ion-input [(ngModel)]="nombre_confirma" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="2">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.TELEFONO' | translate}}</ion-label>
+                <ion-input [(ngModel)]="telefono_confirma" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="3">
+            <ion-item>
+                <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.HOSPITAL' | translate}}</h5>
+                <ion-input [(ngModel)]="kfinal" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5>Hospital</h5>
+            </ion-text>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="6">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.HOSPITAL-RECIBE' | translate}}</ion-label>
+                <ionic-selectable #selectHops [(ngModel)]="hos" [items]="hospitales" itemValueField="id"
+                    searchFailText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.HOSPITALES-VACIO' | translate}}" itemTextField="nombre"
+                    searchPlaceholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.BUSCAR-HOSPITAL' | translate}}" [canSearch]="true" (onSearch)="searchAseg($event)"
+                    closeButtonText="">
+                    <ng-template ionicSelectableTitleTemplate>
+                        <span style="color: white;">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.ELEGIR-HOSPITAL' | translate}}</span>
+                    </ng-template>
+                    <ng-template ionicSelectableItemTemplate let-hospital="item">
+                        {{hospital.nombre}}, {{hospital.dpto}}, {{hospital.prov}}, {{hospital.dist}},
+                    </ng-template>
+                    <ng-template ionicSelectableFooterTemplate>
+                        <ion-footer>
+                            <ion-toolbar>
+                                <ion-row>
+                                    <ion-col size="4">
+                                        <ion-button color="dark" (click)="hospCancel()" expand="block" fill="clear"
+                                            shape="round">
+                                            {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.CANCELAR' | translate}}
+                                        </ion-button>
+                                    </ion-col>
+                                    <ion-col size="4">
+                                        <ion-button color="dark" (click)="hospClear()" expand="block" fill="clear"
+                                            shape="round">
+                                            {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.LIMPIAR' | translate}}
+                                        </ion-button>
+                                    </ion-col>
+                                    <ion-col size="4">
+                                        <ion-button color="dark" (click)="hospConf()" expand="block" fill="clear"
+                                            shape="round">
+                                            {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.GUARDAR' | translate}}
+                                        </ion-button>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-toolbar>
+                        </ion-footer>
+                    </ng-template>
+                </ionic-selectable>
+                <ion-icon slot="end" name="create-outline"></ion-icon>
+            </ion-item>
+        </ion-col>
+        <ion-col size="6">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.MEDICO' | translate}}</ion-label>
+                <ion-input [(ngModel)]="med" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.OBSERVACIONES' | translate}}</ion-label>
+                <ion-input [(ngModel)]="obscaso" type="text"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.FIRMA-MEDICO-RECIBE' | translate}}</h5>
+            </ion-text>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.FIRMA-MEDICO' | translate}}</ion-label>
+                <canvas #imageCanvas (touchstart)="startDrawing($event)" (touchmove)="moved($event)"
+                    (touchend)="endDrawing()" (mousedown)=" startDrawing($event)" (mousemove)="moved($event)"
+                    (mouseup)="endDrawing()"></canvas>
+                <!--  -->
+                <ion-button slot="end" (click)="clear()" shape="round" color="light">
+                    <ion-icon name="create-outline"></ion-icon>
+                </ion-button>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col size="12">
+            <ion-text class="ion-text-center">
+                <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.CERRAR-CASO' | translate}}</h5>
+            </ion-text>
+        </ion-col>
+        <ion-col size="12">
+            <ion-item>
+                <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-OTROS.CERRAR-CASO-LABEL' | translate}}</ion-label>
+                <ion-select cancelText="Cancelar" required="true" [(ngModel)]="cierre" (ionChange)="cerrarCaso()"
+                    [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Cerrar Caso">
+                    <ion-select-option *ngFor="let c of CierreCasos" value="{{c.id}}">{{c.nombre}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+</ion-content>

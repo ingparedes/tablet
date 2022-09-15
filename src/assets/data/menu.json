@@ -1,0 +1,44 @@
+[
+    {
+        "icon": "home-outline",
+        "name": "Inicio",
+        "langLabel": "SISMENU-COMPONENT.MENU.INICIO",
+        "redirectTo": "/inicio",
+        "onclick": ""
+    },
+    {
+        "icon": "add-circle-outline",
+        "name": "Abrir Turno",
+        "langLabel": "SISMENU-COMPONENT.MENU.ABRIR-TURNO",
+        "redirectTo": "/turno",
+        "onclick": ""
+    },
+    {
+        "icon": "reader-outline",
+        "name": "Casos Asignados",
+        "langLabel": "SISMENU-COMPONENT.MENU.CASOS-ASIGNADOS",
+        "redirectTo": "/asignados",
+        "onclick": ""
+    },
+    {
+        "icon": "create-outline",
+        "name": "Crear Casos",
+        "langLabel": "SISMENU-COMPONENT.MENU.CREAR-CASOS",
+        "redirectTo": "/crearcaso",
+        "onclick": ""
+    },
+    {
+        "icon": "push-outline",
+        "name": "Sincronizar Casos",
+        "langLabel": "SISMENU-COMPONENT.MENU.SINCRONIZAR-CASOS",
+        "redirectTo": "/exportarcasos",
+        "onclick": ""
+    },
+    {
+        "icon": "log-out-outline",
+        "name": "Cerrar Sesión",
+        "langLabel": "SISMENU-COMPONENT.MENU.CERRAR-SESION",
+        "redirectTo": "/",
+        "onclick": "closeSisMenu()"
+    }
+]

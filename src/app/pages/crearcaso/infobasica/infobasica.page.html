@@ -1,0 +1,168 @@
+<ion-content color="dark">
+  <ion-row>
+    <ion-col size="12">
+      <ion-text class="ion-text-center">
+        <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.SUBTITULO' | translate}}</h5>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="2">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DNI' | translate}}</ion-label>
+        <ion-input type="text" [(ngModel)]="dni"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.TIPO-DNI' | translate}}</ion-label>
+        <ion-select cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.TIPO-DNI-CANCELAR' | translate}}" [(ngModel)]="tdni" required="true"
+          [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.TIPO-DNI-PLACEHOLDER' | translate}}">
+          <ion-select-option *ngFor="let td of tipoDNI" value="{{td.id_tipo}}">{{td.descripcion}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2.75">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.NOMBRES' | translate}}</ion-label>
+        <ion-input type="text" (ionChange)="setNom($event)"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2.75">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.APELLIDOS' | translate}}</ion-label>
+        <ion-input type="text" (ionChange)="setApe($event)"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2.5">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.GENERO' | translate}}</ion-label>
+        <ion-select cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.GENERO-CANCELAR' | translate}}" required="true" [(ngModel)]="genero"
+          [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.GENERO-PLACEHOLDER' | translate}}">
+          <ion-select-option *ngFor="let g of gen" value="{{g.id_genero}}">{{g.nombre_genero}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="2">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.FECHA-NACIMIENTO' | translate}}</ion-label>
+        <ion-datetime (ionChange)="calculaEdad($event)" cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.FECHA-NACIMIENTO-CANCELAR' | translate}}" doneText="Guardar"
+          [value]="today.toISOString()" displayFormat="DD/MMM/YYYY" min="1900-01-01"
+          monthShortNames="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.FECHA-NACIMIENTO-MESES' | translate}}">
+        </ion-datetime>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.EDAD' | translate}}</ion-label>
+        <ion-input readonly type="text" value="{{edad}} {{tipoEdad | translate}}"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.CELULAR' | translate}}</ion-label>
+        <ion-input [(ngModel)]="celular" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="2">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.TELEFONO' | translate}}</ion-label>
+        <ion-input [(ngModel)]="telefono" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.ASEGURADORA' | translate}}</ion-label>
+        <ionic-selectable #selectAseg [(ngModel)]="aseg" [items]="asegs" itemValueField="id_asegurador"
+          itemTextField="nombre_asegurador" searchFailText="No se encontraron Aseguradoras."
+          searchPlaceholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.ASEGURADORA-BUSCAR' | translate}}" [canSearch]="true" (onSearch)="searchAseg($event)" closeButtonText="">
+          <ng-template ionicSelectableTitleTemplate>
+            <span style="color: white;">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.ASEGURADORA-ELEGIR' | translate}}</span>
+          </ng-template>
+          <ng-template ionicSelectableFooterTemplate>
+            <ion-footer>
+              <ion-toolbar>
+                <ion-row>
+                  <ion-col size="4">
+                    <ion-button color="dark" (click)="asegCancel()" expand="block" fill="clear" shape="round">
+                      {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.CANCELAR' | translate}}
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="4">
+                    <ion-button color="dark" (click)="asegClear()" expand="block" fill="clear" shape="round">
+                      {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.LIMPIAR' | translate}}
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="4">
+                    <ion-button color="dark" (click)="asegConf()" expand="block" fill="clear" shape="round">
+                      {{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.GUARDAR' | translate}}
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-toolbar>
+            </ion-footer>
+          </ng-template>
+        </ionic-selectable>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DIRECCION' | translate}}</ion-label>
+        <ion-input [(ngModel)]="direc" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DEPARTAMENTO' | translate}}</ion-label>
+        <ion-select cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DEPARTAMENTO-CANCELAR' | translate}}" (ionChange)="setDpto($event)" required="true"
+          [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DEPARTAMENTO-PLACEHOLDER' | translate}}">
+          <ion-select-option *ngFor="let d of dptos" value="{{d.cod_dpto}}">{{d.nombre_dpto}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.PROVINCIA' | translate}}</ion-label>
+        <ion-select cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.PROVINCIA-CANCELAR' | translate}}" (ionChange)="setProv($event)" required="true"
+          [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.PROVINCIA-PLACEHOLDER' | translate}}">
+          <ion-select-option *ngFor="let p of provs" value="{{p.cod_provincia}}">{{p.nombre_provincia}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DISTRITO' | translate}}</ion-label>
+        <ion-select cancelText="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DISTRITO-CANCELAR' | translate}}" (ionChange)="setDist($event)" required="true"
+          [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.DISTRITO-PLACEHOLDER' | translate}}">
+          <ion-select-option *ngFor="let d of dists" value="{{d.cod_distrito}}">{{d.nombre_distrito}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-text class="ion-text-center">
+        <h5>{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.INFO-CASO' | translate}}</h5>
+      </ion-text>
+    </ion-col>
+    <ion-col size="6">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.NUMERO-CASO' | translate}}</ion-label>
+        <ion-input readonly value="{{idcaso}}" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-item>
+        <ion-label position="floating">{{ 'ASIGNADOS-COMPONENT.FOLDER-CARGAR.FOLDER-LOAD-BASICA.KM-INICIAL' | translate}}</ion-label>
+        <ion-input [(ngModel)]="kinicial" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-content>

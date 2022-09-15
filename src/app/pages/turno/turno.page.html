@@ -1,0 +1,62 @@
+<app-header></app-header>
+<ion-content>
+  <div class="container">
+    <ion-header>
+      <ion-toolbar>
+        <ion-label color="dark" style="text-align: center;">
+          <h2>{{ 'TURNO-COMPONENT.TITULO' | translate }}</h2>
+        </ion-label>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+  <ion-row>
+    <ion-col size="12">
+      <ion-text class="ion-text-center">
+        <h5>{{ 'TURNO-COMPONENT.INFORMACION' | translate }}</h5>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'TURNO-COMPONENT.CODIGO-AMBULANCIA' | translate }}</ion-label>
+        <ion-input [(ngModel)]="codAmbu" readonly></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'TURNO-COMPONENT.KILOMETRAJE' | translate }}</ion-label>
+        <ion-input [(ngModel)]="km_actual" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'TURNO-COMPONENT.COMBUSTIBLE' | translate }}</ion-label>
+        <ion-input [(ngModel)]="combustible_actual" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="3">
+      <ion-item>
+        <ion-label position="floating">{{ 'TURNO-COMPONENT.VALES' | translate }}</ion-label>
+        <ion-input [(ngModel)]="cantidadtiket" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="12">
+      <ion-item>
+        <ion-label position="floating">{{ 'TURNO-COMPONENT.OBSERVACIONES' | translate }}</ion-label>
+        <ion-input [(ngModel)]="observacion" type="text"></ion-input>
+        <ion-icon slot="end" name="create-outline"></ion-icon>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="4"></ion-col>
+    <ion-col size="4">
+      <ion-button expand="full" (click)="saveTurno()">
+        <ion-icon slot="start" name="save-sharp"></ion-icon>
+        {{ 'TURNO-COMPONENT.ABRIR-TURNO-BUTTON' | translate }}
+      </ion-button>
+    </ion-col>
+    <ion-col size="4"></ion-col>
+  </ion-row>
+</ion-content>
